@@ -43,18 +43,18 @@ public class Tank implements Movable {
 
         Movable m = (Movable)Proxy.newProxyInstance(Tank.class.getClassLoader(),
                 new Class[]{Movable.class}, //tank.class.getInterfaces()
-                new LogHander(tank)
+                new LogHandler(tank)
         );
 
         m.move();
     }
 }
 
-class LogHander implements InvocationHandler {
+class LogHandler implements InvocationHandler {
 
     Tank tank;
 
-    public LogHander(Tank tank) {
+    public LogHandler(Tank tank) {
         this.tank = tank;
     }
     //getClass.getMethods[]
